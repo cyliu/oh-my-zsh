@@ -68,9 +68,11 @@ echo "$STATUS"
 
 TTASK='$(t_status)'
 GITSTATUS='$(git_super_status)'
-ARROW='%{$fg[red]%}>%{$fg[yellow]%}>%{$fg[green]%}>%{$reset_color%} '
-PROMPT=$TTASK$GITSTATUS$ARROW
-RPROMPT='%{$fg_bold[cyan]%}[$(folder)]%{$reset_color%}'
+#ARROW='%{$fg_bold[red]%}>%{$fg_bold[yellow]%}>%{$fg_bold[green]%}>%{$reset_color%}⚡ '
+ARROW='⚡ '
+PROMPT=$TTASK$ARROW
+FOLDER='%{$fg_bold[cyan]%}[$(folder)]%{$reset_color%}'
+RPROMPT=$FOLDER$GITSTATUS
 
 #PROMPT='%{$fg_bold[green]%}%n%{$reset_color%}%{$fg_bold[red]%}@%{$reset_color%}%{$fg_bold[yellow]%}%m%{$reset_color%}%{$fg[cyan]%}[${PWD/#$HOME/~}]%{$reset_color%}%{$fg_bold[green]%}$(prompt_char)%{$reset_color%}'
 #RPROMPT='['`echo $(battery_charge)`' %{$fg[blue]%}%* %D%{$reset_color%}]'
